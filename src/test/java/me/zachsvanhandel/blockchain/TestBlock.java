@@ -21,7 +21,7 @@ public class TestBlock {
     String previousHash = StringUtils.repeat("0", Block.HASH_SIZE_CHARS); // all 0s
 
     int difficulty = 2; // low difficulty so tests remain fast
-    String target = createHashTarget(difficulty);
+    String target = TestUtils.createHashTarget(difficulty);
 
     block = new Block(previousHash, target, data);
   }
@@ -99,13 +99,6 @@ public class TestBlock {
     long expectedNonce = (long) TestUtils.getPrivateField(block, "nonce");
     long actualNonce = block.getNonce();
     assertEquals(expectedNonce, actualNonce);
-  }
-
-  private String createHashTarget(int difficulty) {
-    String leadingZeroes = StringUtils.repeat("0", difficulty);
-    String remainingChars = StringUtils.repeat("f", Block.HASH_SIZE_CHARS - difficulty);
-
-    return leadingZeroes + remainingChars;
   }
 
 }
