@@ -82,17 +82,17 @@ public class TestBlockchain {
   }
 
   @Test
-  public void testGetBlocks() throws IllegalAccessException, NoSuchFieldException {
-    List<Block> expectedBlocks = (List<Block>) TestUtils.getPrivateField(blockchain, "blocks");
-    List<Block> actualBlocks = blockchain.getBlocks();
-    assertEquals(expectedBlocks, actualBlocks);
-  }
-
-  @Test
   public void testGetDifficulty() throws IllegalAccessException, NoSuchFieldException {
     int expectedDifficulty = (int) TestUtils.getPrivateField(blockchain, "difficulty");
     int actualDifficulty = blockchain.getDifficulty();
     assertEquals(expectedDifficulty, actualDifficulty);
+  }
+
+  @Test
+  public void testGetBlocks() throws IllegalAccessException, NoSuchFieldException {
+    List<Block> expectedBlocks = (List<Block>) TestUtils.getPrivateField(blockchain, "blocks");
+    List<Block> actualBlocks = blockchain.getBlocks();
+    assertEquals(expectedBlocks, actualBlocks);
   }
 
   private Block createBlock(int difficulty, String previousHash, boolean hashIsCorrect,

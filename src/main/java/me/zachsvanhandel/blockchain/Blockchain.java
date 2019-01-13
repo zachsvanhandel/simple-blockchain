@@ -6,12 +6,12 @@ import org.apache.commons.lang.StringUtils;
 
 public class Blockchain {
 
-  private List<Block> blocks;
   private final int difficulty; // number of leading 0s required for hash values
+  private List<Block> blocks;
 
   public Blockchain(int difficulty) {
-    this.blocks = new LinkedList<>();
     this.difficulty = difficulty;
+    this.blocks = new LinkedList<>();
   }
 
   public void addBlock(String data) {
@@ -58,12 +58,12 @@ public class Blockchain {
     return leadingZeroes + remainingChars;
   }
 
-  public List<Block> getBlocks() {
-    return blocks;
-  }
-
   public int getDifficulty() {
     return difficulty;
+  }
+
+  public List<Block> getBlocks() {
+    return blocks;
   }
 
 }
