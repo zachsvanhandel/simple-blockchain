@@ -64,3 +64,6 @@ $ mvn clean test
 ```
 
 The project also uses [JaCoCo](https://www.jacoco.org/jacoco/index.html) to create code coverage reports. These reports show which lines and branches were executed by the tests. A new coverage report is generated every time the tests are run by Maven, and can be viewed by opening the following file: *`target/site/jacoco/index.html`*.  
+
+## Acknowledgements
+* The project was inspired by a tutorial from [Medium](https://medium.com/programmers-blockchain/create-simple-blockchain-java-tutorial-from-scratch-6eeed3cb03fa). 
